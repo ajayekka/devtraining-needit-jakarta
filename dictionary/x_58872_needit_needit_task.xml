@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="NeedIt Task" max_length="40" name="x_58872_needit_needit_task" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Assigned to" max_length="32" name="u_assigned_to" reference="cmdb_ci_appl_dot_net" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="1000" name="u_description" type="string"/>
+        <element label="Due date" max_length="40" name="u_due_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Priority" max_length="40" name="u_priority" type="string">
+            <choice>
+                <element label="P1" sequence="0" value="p1"/>
+                <element label="P2" sequence="1" value="p2"/>
+                <element label="P3" sequence="2" value="p3"/>
+                <element label="P4" sequence="3" value="p4"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short Description" max_length="40" name="u_short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="State" max_length="40" name="u_state" type="string">
+            <choice>
+                <element label="Open" sequence="0" value="open"/>
+                <element label="Work in progress" sequence="1" value="work in progress"/>
+                <element label="Closed" sequence="2" value="closed"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Work Note" max_length="40" name="u_work_note" type="string"/>
+        <index name="index">
+            <element name="u_assigned_to"/>
+        </index>
+    </element>
+</database>
